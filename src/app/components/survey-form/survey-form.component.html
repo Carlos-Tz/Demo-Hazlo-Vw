@@ -1,0 +1,70 @@
+<div class="row s12">
+  <div class="col s3">
+    <div class="card">
+      <!-- <span class="card-title"><b>Datos de los Clientes</b></span> -->
+      <div class="card-content">
+        <table>
+          <thead>
+            <tr>
+              <th>Encuesta</th>
+              <th>Datos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let survey of dataList ;let i=index; ">
+              <td>
+                <span *ngIf="i===0; else ante">* Actual *</span>
+                <ng-template #ante>
+                    <span>Anterior {{i}}</span>
+                </ng-template>                
+              </td>
+              <td><a routerLink="/stats/{{survey.$key}}"
+                  class="btn-floating btn-small waves-effect waves-light teal">+</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col s9">
+    
+    <form [formGroup]="surveyF" (ngSubmit)="submitSurveyData()" novalidate class="col s12"
+      autocomplete="off">
+      <div class="row">
+        <h5>Encuesta Actual</h5>
+        <div class="input-field col s12">
+          <input name="p1" type="text"  formControlName="p1" class="form-control" [(ngModel)]="currentData.p1">
+        </div>
+        <div class="input-field col s12">
+          <input name="p2" type="text"  formControlName="p2" class="form-control" [(ngModel)]="currentData.p2">
+        </div>
+        <div class="input-field col s12">
+          <input name="p3" type="text"  formControlName="p3" class="form-control" [(ngModel)]="currentData.p3">
+        </div>
+        <div class="input-field col s12">
+          <input name="p4" type="text"  formControlName="p4" class="form-control" [(ngModel)]="currentData.p4">
+        </div>
+        <div class="input-field col s12">
+          <input name="p5" type="text"  formControlName="p5" class="form-control" [(ngModel)]="currentData.p5">
+        </div>
+        <div class="input-field col s12">
+          <input name="p6" type="text"  formControlName="p6" class="form-control" [(ngModel)]="currentData.p6">
+        </div>
+        <div class="input-field col s12">
+          <input name="p7" type="text"  formControlName="p7" class="form-control" [(ngModel)]="currentData.p7">
+        </div>
+        <div class="input-field col s12">
+          <input name="p8" type="text"  formControlName="p8" class="form-control" [(ngModel)]="currentData.p8">
+        </div>
+        <div class="input-field col s12">
+          <input name="p9" type="text"  formControlName="p9" class="form-control" [(ngModel)]="currentData.p9">
+        </div>
+      </div>
+      <div class="row col s12 right-align">
+        <button type="submit" class="btn btn-success btn-large" [disabled]="!surveyF.valid">Actualizar</button>
+      </div>
+    </form>
+  </div>
+
+</div>

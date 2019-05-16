@@ -1,0 +1,102 @@
+#head{
+  margin-bottom: 0;
+
+}
+
+#r_row{
+  margin-top: 2mm;
+  margin-bottom : 0;
+}
+#r_row_1b{
+  margin-top: 3mm;
+  margin-bottom: 0;
+  padding-left : 2.8cm;
+}
+#r_row_1c{
+ /* margin-top: 4mm;*/
+  margin-bottom: 0;
+  padding-left : 2.8cm;
+}
+#r_row_b{
+  margin-top: 0;
+  margin-bottom : 0;
+}
+#r_col{
+  padding-left: 0;
+  /*padding-right: 1.5mm;*/
+  margin-right: 2mm;
+  margin-bottom: 2mm;
+}
+#r_col_2{
+  padding-left: 0;
+  margin-right: 2mm;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+#r_col_2b{
+  padding-left: 0;
+  margin-right: 2mm;
+  margin-bottom: 0;
+  margin-top: 3mm;
+}
+#sub_t{
+  margin-left: 2.8cm;
+  width: 16.7cm;
+}
+#row_input{
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 1cm;
+}
+#i_name{
+  width: 15.6cm;
+  background: none;
+  height: 1.7rem;
+}
+#i_order{
+  width: 9cm;
+  height: 1.7rem;
+}
+#i_date{
+  width: 5.5cm;
+  height: 1.7rem;
+}
+#i_comm{
+  margin-left: 2.8cm;
+  width: 16.6cm;
+  height: 0.8cm;
+}
+#r_q1{
+  margin-bottom: 0;
+  margin-top: 6mm;
+}
+#radio_b{
+  padding-top: 2mm;
+}
+
+.ques_ {
+  border-bottom: none !important;
+  height: 1.5rem !important;
+}
+input[type=text]{
+  color: #494b4e;
+  font-size: 0.8rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#printBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#printBtn img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

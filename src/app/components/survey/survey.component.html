@@ -1,0 +1,497 @@
+<div class="app">
+  <section>
+    <div class="page">
+      <div class="inner">
+        <div class="row">
+          <form [formGroup]="surveyForm" (ngSubmit)="submitSurveyData()" novalidate autocomplete="off">
+            <div class="row col s9" id="head">
+              <div id="m-title">ENCUESTA DE SALIDA SERVICIO VOLKSWAGEN</div>
+            </div>
+            <div class="row col s3" id="head">
+              <img src="assets/Logo.png" alt="" width="100%">
+            </div>
+            <div class="row col s12" id="r_row">
+              Nombre del Cliente:
+              <div class="input-field inline" id="row_input">
+                <label></label>
+                <input type="text" formControlName="name" [(ngModel)]="survey.name" id="i_name" required>
+              </div>
+            </div>
+            <div class="row col s12" id="r_row">
+              Orden de Servicio:
+              <div class="input-field inline" id="row_input">
+                <label></label>
+                <input type="text" formControlName="order" [(ngModel)]="survey.order" id="i_order" required>
+              </div>
+              Fecha:
+              <div class="input-field inline" id="row_input">
+                <label></label>
+                <input type="text" class="center-align" id="i_date" [(ngModel)]="survey.fecha" formControlName="fecha" required>
+              </div>
+            </div>
+            <div class="row col s12" id="r_q1">
+              <p><input type="text"  [(ngModel)]="surveyData.p1" formControlName="q1" class="ques_" style="font-weight: 700"></p>    <!---->
+            </div>
+
+
+            <p id="sub_t"><input type="text"  [(ngModel)]="surveyData.p2" formControlName="q2" class="ques_"></p>       <!---->     
+            <div class="row" id="r_row_1b">
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question1" [value]="1" [(ngModel)]="survey.question1">
+                    <span>1</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question1" [value]="2" [(ngModel)]="survey.question1">
+                    <span>2</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question1" [value]="3" [(ngModel)]="survey.question1">
+                    <span>3</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question1" [value]="4" [(ngModel)]="survey.question1">
+                    <span>4</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question1" [value]="5" [(ngModel)]="survey.question1">
+                    <span>5</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question1" [value]="6" [(ngModel)]="survey.question1">
+                    <span>6</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question1" [value]="7" [(ngModel)]="survey.question1">
+                    <span>7</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question1" [value]="8" [(ngModel)]="survey.question1">
+                    <span>8</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question1" [value]="9" [(ngModel)]="survey.question1">
+                    <span>9</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question1" [value]="10" [(ngModel)]="survey.question1">
+                    <span>10</span>
+                  </label>
+                </a>
+              </div>
+            </div>
+            <p id="sub_t"><input type="text"  [(ngModel)]="surveyData.p3" formControlName="q3" class="ques_"></p>   <!---->
+            <div class="row" id="r_row_1b">
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question2" [(ngModel)]="survey.question2" [value]="1">
+                    <span>1</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question2" [(ngModel)]="survey.question2" [value]="2">
+                    <span>2</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question2" [(ngModel)]="survey.question2" [value]="3">
+                    <span>3</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question2" [(ngModel)]="survey.question2" [value]="4">
+                    <span>4</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question2" [(ngModel)]="survey.question2" [value]="5">
+                    <span>5</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question2" [(ngModel)]="survey.question2" [value]="6">
+                    <span>6</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question2" [(ngModel)]="survey.question2" [value]="7">
+                    <span>7</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question2" [(ngModel)]="survey.question2" [value]="8">
+                    <span>8</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question2" [(ngModel)]="survey.question2" [value]="9">
+                    <span>9</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question2" [(ngModel)]="survey.question2" [value]="10">
+                    <span>10</span>
+                  </label>
+                </a>
+              </div>
+            </div>
+            <p id="sub_t"><input type="text"  [(ngModel)]="surveyData.p4" formControlName="q4" class="ques_"></p>   <!---->
+            <div class="row" id="r_row_1b">
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question3" [(ngModel)]="survey.question3" [value]="1">
+                    <span>1</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question3" [(ngModel)]="survey.question3" [value]="2">
+                    <span>2</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question3" [(ngModel)]="survey.question3" [value]="3">
+                    <span>3</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question3" [(ngModel)]="survey.question3" [value]="4">
+                    <span>4</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question3" [(ngModel)]="survey.question3" [value]="5">
+                    <span>5</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question3" [(ngModel)]="survey.question3" [value]="6">
+                    <span>6</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question3" [(ngModel)]="survey.question3" [value]="7">
+                    <span>7</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question3" [(ngModel)]="survey.question3" [value]="8">
+                    <span>8</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question3" [(ngModel)]="survey.question3" [value]="9">
+                    <span>9</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col">
+                <a class="btn white" id="r_col">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question3" [(ngModel)]="survey.question3" [value]="10">
+                    <span>10</span>
+                  </label>
+                </a>
+              </div>
+            </div>
+            <div class="row" id="r_row">
+              <p id="sub_t"><input type="text"  [(ngModel)]="surveyData.p5" formControlName="q5" class="ques_"></p>   <!---->
+              <div class="input-field inline" id="row_input">
+                <input type="text" formControlName="question4" [(ngModel)]="survey.question4" [value]="survey.question4" id="i_comm">
+              </div>
+            </div>
+
+            <div class="row col s12" id="r_q1">
+              <p><input type="text"  [(ngModel)]="surveyData.p6" formControlName="q6" class="ques_" style="font-weight: 700"></p>    <!---->
+            </div>
+            <div class="row" id="r_row_1c">
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question5" [(ngModel)]="survey.question5" [value]="1">
+                    <span>1</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question5" [(ngModel)]="survey.question5" [value]="2">
+                    <span>2</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question5" [(ngModel)]="survey.question5" [value]="3">
+                    <span>3</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question5" [(ngModel)]="survey.question5" [value]="4">
+                    <span>4</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question5" [(ngModel)]="survey.question5" [value]="5">
+                    <span>5</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question5" [(ngModel)]="survey.question5" [value]="6">
+                    <span>6</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question5" [(ngModel)]="survey.question5" [value]="7">
+                    <span>7</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question5" [(ngModel)]="survey.question5" [value]="8">
+                    <span>8</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question5" [(ngModel)]="survey.question5" [value]="9">
+                    <span>9</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question5" [(ngModel)]="survey.question5" [value]="10">
+                    <span>10</span>
+                  </label>
+                </a>
+              </div>
+            </div>
+            <div class="row" id="r_row">
+              <p id="sub_t"><input type="text"  [(ngModel)]="surveyData.p7" formControlName="q7" class="ques_"></p>   <!---->  
+              <div class="input-field inline" id="row_input">
+                <input type="text" formControlName="question6" [(ngModel)]="survey.question6" id="i_comm" placeholder="Comentarios">
+              </div>
+            </div>
+            <div class="row col s12" id="r_q1">
+              <p><input type="text"  [(ngModel)]="surveyData.p8" formControlName="q8" class="ques_" style="font-weight: 700"></p>    <!---->
+            </div>
+            <div class="row" id="r_row_1c">
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question7" [(ngModel)]="survey.question7" [value]="1">
+                    <span>1</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question7" [(ngModel)]="survey.question7" [value]="2">
+                    <span>2</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question7" [(ngModel)]="survey.question7" [value]="3">
+                    <span>3</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question7" [(ngModel)]="survey.question7" [value]="4">
+                    <span>4</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question7" [(ngModel)]="survey.question7" [value]="5">
+                    <span>5</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question7" [(ngModel)]="survey.question7" [value]="6">
+                    <span>6</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question7" [(ngModel)]="survey.question7" [value]="7">
+                    <span>7</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question7" [(ngModel)]="survey.question7" [value]="8">
+                    <span>8</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question7" [(ngModel)]="survey.question7" [value]="9">
+                    <span>9</span>
+                  </label>
+                </a>
+              </div>
+              <div class="row col s1" id="r_col_2">
+                <a class="btn white" id="r_col_2b">
+                  <label class="form-check-inline">
+                    <input class="form-check-input" type="radio" formControlName="question7" [(ngModel)]="survey.question7" [value]="10">
+                    <span>10</span>
+                  </label>
+                </a>
+              </div>
+            </div>
+            <div class="row" id="r_row">
+              <p id="sub_t"><input type="text"  [(ngModel)]="surveyData.p9" formControlName="q10" class="ques_"></p>   <!---->
+              <div class="input-field inline" id="row_input">
+                <input type="text" formControlName="question8" [(ngModel)]="survey.question8" id="i_comm" placeholder="Comentarios">
+              </div>
+            </div>
+
+            <div class="row" id="r_row_b">
+              <div class="row col s1" id="r_row"></div>
+              <div class="row col s10" id="r_row_b">
+                <p style="font-weight: 400; text-align: center;">Muchas gracias por sus comentarios, estos nos serán de mucha utilidad para poder brindarle un servicio excelente y cumplir con nuestras promesas hacia usted</p>
+                <p style="text-align: center;"><b>"Haciendolo Volkswagen"</b></p>
+              </div>              
+              <div class="row col s1 left-align" id="r_row_b">
+                <img src="assets/Logo3.png" alt="" height="50px">
+              </div>
+            </div>
+            <div class="row col s3 right-align" id="r_row_b">
+              <button type="submit" class="btn btn-success btn-large" [disabled]="!surveyForm.valid">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="no-print" id="printBtn" onclick="window.print()">
+      <img src="assets/save.png" alt="" width="75" height="75">
+    </div>
+  </section>
+</div>
