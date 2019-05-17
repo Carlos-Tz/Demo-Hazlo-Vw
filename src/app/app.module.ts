@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { DataTablesModule } from 'angular-datatables';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,7 +36,8 @@ import { AddSurveyComponent } from './components/add-survey/add-survey.component
     ToastrModule.forRoot(),
     ReactiveFormsModule,
     NgxChartsModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

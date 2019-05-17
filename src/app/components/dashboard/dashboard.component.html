@@ -13,19 +13,19 @@
     <div class="row card-content">
       <div class="row col s12">
         <div class="col s12 m6 l4 center">
-          <span><b>1.- Clasifique su experiencia de servicio en general que recibió en esta concesionaria.</b></span>
+          <span><b>{{ currentData.p2 }}</b></span>
           <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p1Data" [legend]="showLegend"
             [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
           </ngx-charts-pie-chart>
         </div>
         <div class="col s12 m6 l4 center">
-          <span class="center-align"><b>2.- ¿Que tan satisfecho está con su Asesor de Servicio?</b></span>
+          <span class="center-align"><b>{{ currentData.p3 }}</b></span>
           <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p2Data" [legend]="showLegend"
             [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
           </ngx-charts-pie-chart>
         </div>
         <div class="col s12 m6 l4 center">
-          <span class="center-align"><b>3.- ¿Se completo todo el trabajo solicitado en esta visita?</b></span>
+          <span class="center-align"><b>{{ currentData.p4 }}</b></span>
           <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p3Data" [legend]="showLegend"
             [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
           </ngx-charts-pie-chart>
@@ -33,121 +33,18 @@
       </div>
       <div class="row col s12">
         <div class="col s12 m6 l4 center">
-          <span class="center-align"><b>4.-¿Qué tan satisfecho está con el tiempo transcurrido para que el servicio fuera
-              completado?</b></span>
+          <span class="center-align"><b>{{ currentData.p6 }}</b></span>
           <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p4Data" [legend]="showLegend"
             [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
           </ngx-charts-pie-chart>
         </div>
         <div class="col s12 m6 l4 center">
-          <span class="center-align"><b>5.- ¿Cuál es su nivel de satisfacción con las instalaciones de la concesionaria y
-              amenidades ofrecidas?</b></span>
+          <span class="center-align"><b>{{ currentData.p8 }}</b></span>
           <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p5Data" [legend]="showLegend"
             [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
           </ngx-charts-pie-chart>
         </div>
-      </div>
-    <!--  <div class="row col s12">
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>2a.- La cortesía, responsabilidad y honestidad por parte de nuestros asesores de
-              servicio.</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p2aData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>2b.- Revisión de los componentes del vehículo y explicación de los trabajos.</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p2bData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>2c.- Mantenerlo informado del avance del trabajo o servicio.</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p2cData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-      </div>
-      <div class="row col s12">
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>2d.- La condición del vehículo en la entrega.</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p2dData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>2e.- La explicación de los trabajos realizados.</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p2eData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>2f.- Explicación de la factura y lo justo del cobro.</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p2fData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-      </div>
-      <div class="row col s12">
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>3a.- ¿Por qué motivo?</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p3aData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>4a.- Facilidad y disponibilidad para agendar cita.</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p4aData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>4b.- Tiempo en la entrega de su vehículo.</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p4bData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-      </div>
-      <div class="row col s12">
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>4c.- Tiempo total requerido para completar el servicio en su vehículo.</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p4cData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>5a.- Facilidad para entrar y salir.</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p5aData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>5b.- Limpieza de la concesionaria.</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p5bData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-      </div>
-      <div class="row col s12">
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>5c.- Comodidad en el área de espera.</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p5cData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>5d.- Amenidades ofrecidas.</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p5dData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-        <div class="col s12 m6 l4 center">
-          <span class="center"><b>6a.- ¿Con la calidad del auto?</b></span>
-          <ngx-charts-pie-chart *ngIf="chartdata" [view]="view" [scheme]="colorScheme" [results]="p6aData" [legend]="showLegend"
-            [explodeSlices]="explodeSlices" [labels]="showLabels" [doughnut]="doughnut">
-          </ngx-charts-pie-chart>
-        </div>
-      </div> -->
+      </div>    
     </div>
   </div>
   <div id="test-swipe-2" class="col s12 grey lighten-2">
@@ -162,23 +59,32 @@
           </div> -->
 
           <div class="card-content">
-            <table id="dataTable">
+            <table datatable [dtOptions]="dtOptions" class="row-border hover">
               <thead>
                 <tr>
                   <th>Nombre</th>
                   <th>No. de Orden</th>
                   <th>Fecha</th>
+                  <th style="display:none">{{currentData.p2}}</th>
+                  <th style="display:none">{{currentData.p3}}</th>
+                  <th style="display:none">{{currentData.p4}}</th>
+                  <th style="display:none">{{currentData.p6}}</th>
+                  <th style="display:none">{{currentData.p8}}</th>
                   <th>Más...</th>
                 </tr>
               </thead>
               <tbody>
                 <!-- <tr *ngFor="let survey of Survey | filter:filter_key | paginate: {itemsPerPage:5,currentPage:p};let i=index; "> -->
-                <tr *ngFor="let survey of Survey;let i=index; ">
+                <tr *ngFor="let survey of surveys;let i=index; ">
                   <td>{{survey.name}}</td>
                   <td>{{survey.order}}</td>
                   <td>{{survey.fecha}}</td>
-                  <!-- <td>{{survey.adviser}}</td> -->
-                  <td><a [routerLink]="['/view/', key, survey.$key]" class="btn-floating btn-small waves-effect waves-light teal">+</a></td>
+                  <td style="display:none">{{survey.question1}}</td>
+                  <td style="display:none">{{survey.question2}}</td>
+                  <td style="display:none">{{survey.question3}}</td>
+                  <td style="display:none">{{survey.question5}}</td>
+                  <td style="display:none">{{survey.question7}}</td>
+                  <td><a [routerLink]="['/view/', key, survey.key]" class="btn-floating btn-small waves-effect waves-light teal">+</a></td>
                 </tr>
               </tbody>
             </table>

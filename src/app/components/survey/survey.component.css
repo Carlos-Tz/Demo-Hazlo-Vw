@@ -80,8 +80,9 @@
 }
 input[type=text]{
   color: #494b4e;
-  font-size: 0.8rem;
+  font-size: 0.95em;
   font-family: 'Open Sans', sans-serif;
+  margin: 0 0 4px 0;
 }
 
 #printBtn {

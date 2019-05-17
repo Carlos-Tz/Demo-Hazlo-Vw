@@ -74,16 +74,6 @@ export class ViewSurveyComponent implements OnInit {
       question6: [''],
       question7: ['', [Validators.required]],
       question8: [''],
-      q1: [''],
-      q2: [''],
-      q3: [''],
-      q4: [''],
-      q5: [''],
-      q6: [''],
-      q7: [''],
-      q8: [''],
-      q9: [''],
-      q10: [''],
       fecha: ['']
     });
   }

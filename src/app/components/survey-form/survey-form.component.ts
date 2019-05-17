@@ -14,6 +14,7 @@ export class SurveyFormComponent implements OnInit {
   public surveyF: FormGroup;
   public currentData = {};
   public dataList = [];
+  dtOptions = {};
 
   constructor(
     private toastr: ToastrService,
@@ -35,9 +36,32 @@ export class SurveyFormComponent implements OnInit {
           this.dataList.push(surv as SurveyForm);
         });
         this.dataList.reverse();
-        //this.dataList = re.reverse();
+        
       });
     });
+    this.dtOptions = {
+      dom: 'Bfrtip',
+      buttons: [],
+      info: false,
+      filter: false,
+      language: {
+        paginate: {
+            first:    '«',
+            previous: '‹',
+            next:     '›',
+            last:     '»'
+        },
+        aria: {
+            paginate: {
+                first:    'Primero',
+                previous: 'Anterior',
+                next:     'Siguiente',
+                last:     'Último'
+            }
+        },
+        emptyTable: ' '
+      }
+    };
     this.sForm();
   }
 

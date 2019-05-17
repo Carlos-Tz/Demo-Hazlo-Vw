@@ -5,6 +5,8 @@ import { Survey } from '../../models/survey';
 /* import { AuthService } from '../../shared/auth.service'; */
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import 'fecha';
+import fechaObj from 'fecha';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,6 +17,9 @@ export class DashboardComponent implements OnInit {
   p = 1;
   Survey: Survey[];
   key = '';
+  currentData = [];
+  dtOptions = {};
+  fecha = '';
 
   // public filter_Key: string;
   filter_key = '';
@@ -40,12 +45,51 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.fecha = fechaObj.format(new Date(), 'D [de] MMMM [de] YYYY');
+    
     this.p1 = []; this.p2 = []; this.p3 = []; this.p4 = []; this.p5 = [];
     this.p1Data = []; this.p2Data = []; this.p3Data = []; this.p4Data = []; this.p5Data = [];
     this.key = this.actRouter.snapshot.paramMap.get('key');
     this.dataSource = this.surveyApi.getAll(this.key);
+    this.surveyApi.getCurrentData(this.key).valueChanges().subscribe(data => {
+      this.currentData = data;
+    });
+    this.dtOptions = {
+      dom: 'Bfrtip',
+      // Configure the buttons
+      buttons: [
+        {
+          extend: 'print',
+          title: 'Hazlo Volkswagen a ' + this.fecha,
+          text: 'Imprimir tabla'
+        },
+        {
+          extend: 'excel',
+          title: 'Hazlo Volkswagen a ' + this.fecha,
+          text: 'Exportar a Excel'
+        }
+      ],
+      language: {
+        paginate: {
+            first:    '«',
+            previous: '‹',
+            next:     '›',
+            last:     '»'
+        },
+        aria: {
+            paginate: {
+                first:    'Primero',
+                previous: 'Anterior',
+                next:     'Siguiente',
+                last:     'Último'
+            }
+        },
+        info: 'Mostrando _START_ a _END_ de _TOTAL_ entradas',
+        search: 'Buscar'
+      }
+    };
 
-    this.surveyApi.GetSurveysList(this.key).snapshotChanges().subscribe(data => {
+    /* this.surveyApi.GetSurveysList(this.key).snapshotChanges().subscribe(data => {
       this.Survey = [];
       data.forEach(item => {
         const surv = item.payload.toJSON();
@@ -53,7 +97,7 @@ export class DashboardComponent implements OnInit {
         this.Survey.push(surv as Survey);
       });
       this.Survey.reverse();
-    });
+    }); */
     this.dataSource.forEach(val => {
       this.chartdata = true;
       val.forEach(element => {
@@ -106,91 +150,6 @@ export class DashboardComponent implements OnInit {
         };
         this.p5Data.push(singleentry);
       }
-     /*  for (var key in this.p3b) {
-        let singleentry = { name: key, value: this.p3b[key] }
-        this.p3bData.push(singleentry);
-      }
-      for (var key in this.p4) {
-        let singleentry = { name: key, value: this.p4[key] }
-        this.p4Data.push(singleentry);
-      }
-      for (var key in this.p5) {
-        let singleentry = { name: key, value: this.p5[key] }
-        this.p5Data.push(singleentry);
-      }
-      for (var key in this.p6) {
-        let singleentry = { name: key, value: this.p6[key] }
-        this.p6Data.push(singleentry);
-      }
-      for (var key in this.p7) {
-        let singleentry = { name: key, value: this.p7[key] }
-        this.p7Data.push(singleentry);
-      }
-      for (var key in this.p2a) {
-        let singleentry = { name: key, value: this.p2a[key] }
-        this.p2aData.push(singleentry);
-      }
-      for (var key in this.p2b) {
-        let singleentry = { name: key, value: this.p2b[key] }
-        this.p2bData.push(singleentry);
-      }
-      for (var key in this.p2c) {
-        let singleentry = { name: key, value: this.p2c[key] }
-        this.p2cData.push(singleentry);
-      }
-      for (var key in this.p2d) {
-        let singleentry = { name: key, value: this.p2d[key] }
-        this.p2dData.push(singleentry);
-      }
-      for (var key in this.p2e) {
-        let singleentry = { name: key, value: this.p2e[key] }
-        this.p2eData.push(singleentry);
-      }
-      for (var key in this.p2f) {
-        let singleentry = { name: key, value: this.p2f[key] }
-        this.p2fData.push(singleentry);
-      }
-      for (var key in this.p3a) {
-        let singleentry = { name: key, value: this.p3a[key] }
-        this.p3aData.push(singleentry);
-      }
-      for (var key in this.p4a) {
-        let singleentry = { name: key, value: this.p4a[key] }
-        this.p4aData.push(singleentry);
-      }
-      for (var key in this.p4b) {
-        let singleentry = { name: key, value: this.p4b[key] }
-        this.p4bData.push(singleentry);
-      }
-      for (var key in this.p4c) {
-        let singleentry = { name: key, value: this.p4c[key] }
-        this.p4cData.push(singleentry);
-      }
-      for (var key in this.p5a) {
-        let singleentry = { name: key, value: this.p5a[key] }
-        this.p5aData.push(singleentry);
-      }
-      for (var key in this.p5b) {
-        let singleentry = { name: key, value: this.p5b[key] }
-        this.p5bData.push(singleentry);
-      }
-      for (var key in this.p5c) {
-        let singleentry = { name: key, value: this.p5c[key] }
-        this.p5cData.push(singleentry);
-      }
-      for (var key in this.p5d) {
-        let singleentry = { name: key, value: this.p5d[key] }
-        this.p5dData.push(singleentry);
-      }
-      for (var key in this.p6a) {
-        let singleentry = { name: key, value: this.p6a[key] }
-        this.p6aData.push(singleentry);
-      }
-      for (var key in this.p6b) {
-        let singleentry = { name: key, value: this.p6b[key] }
-        this.p6bData.push(singleentry);
-      }
- */
     });
   }
 

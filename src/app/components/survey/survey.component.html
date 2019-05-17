@@ -30,11 +30,12 @@
               </div>
             </div>
             <div class="row col s12" id="r_q1">
-              <p><input type="text"  [(ngModel)]="surveyData.p1" formControlName="q1" class="ques_" style="font-weight: 700"></p>    <!---->
+              <!-- <p><input type="text"  [(ngModel)]="surveyData.p1" formControlName="q1" class="ques_" style="font-weight: 700"></p> -->    <!---->
+              <p>{{ surveyData.p1 }}</p>
             </div>
 
 
-            <p id="sub_t"><input type="text"  [(ngModel)]="surveyData.p2" formControlName="q2" class="ques_"></p>       <!---->     
+            <p id="sub_t">{{ surveyData.p2 }}</p>       <!---->     
             <div class="row" id="r_row_1b">
               <div class="row col s1" id="r_col">
                 <a class="btn white" id="r_col">
@@ -117,7 +118,7 @@
                 </a>
               </div>
             </div>
-            <p id="sub_t"><input type="text"  [(ngModel)]="surveyData.p3" formControlName="q3" class="ques_"></p>   <!---->
+            <p id="sub_t">{{ surveyData.p3 }}</p>   <!---->
             <div class="row" id="r_row_1b">
               <div class="row col s1" id="r_col">
                 <a class="btn white" id="r_col">
@@ -200,7 +201,7 @@
                 </a>
               </div>
             </div>
-            <p id="sub_t"><input type="text"  [(ngModel)]="surveyData.p4" formControlName="q4" class="ques_"></p>   <!---->
+            <p id="sub_t">{{ surveyData.p4 }}</p>   <!---->
             <div class="row" id="r_row_1b">
               <div class="row col s1" id="r_col">
                 <a class="btn white" id="r_col">
@@ -284,14 +285,14 @@
               </div>
             </div>
             <div class="row" id="r_row">
-              <p id="sub_t"><input type="text"  [(ngModel)]="surveyData.p5" formControlName="q5" class="ques_"></p>   <!---->
+              <p id="sub_t">{{ surveyData.p5 }}</p>   <!---->
               <div class="input-field inline" id="row_input">
                 <input type="text" formControlName="question4" [(ngModel)]="survey.question4" [value]="survey.question4" id="i_comm">
               </div>
             </div>
 
             <div class="row col s12" id="r_q1">
-              <p><input type="text"  [(ngModel)]="surveyData.p6" formControlName="q6" class="ques_" style="font-weight: 700"></p>    <!---->
+              <p>{{ surveyData.p6 }}</p>    <!---->
             </div>
             <div class="row" id="r_row_1c">
               <div class="row col s1" id="r_col_2">
@@ -376,13 +377,13 @@
               </div>
             </div>
             <div class="row" id="r_row">
-              <p id="sub_t"><input type="text"  [(ngModel)]="surveyData.p7" formControlName="q7" class="ques_"></p>   <!---->  
+              <p id="sub_t">{{ surveyData.p7 }}</p>   <!---->  
               <div class="input-field inline" id="row_input">
                 <input type="text" formControlName="question6" [(ngModel)]="survey.question6" id="i_comm" placeholder="Comentarios">
               </div>
             </div>
             <div class="row col s12" id="r_q1">
-              <p><input type="text"  [(ngModel)]="surveyData.p8" formControlName="q8" class="ques_" style="font-weight: 700"></p>    <!---->
+              <p>{{ surveyData.p8 }}</p>    <!---->
             </div>
             <div class="row" id="r_row_1c">
               <div class="row col s1" id="r_col_2">
@@ -467,7 +468,7 @@
               </div>
             </div>
             <div class="row" id="r_row">
-              <p id="sub_t"><input type="text"  [(ngModel)]="surveyData.p9" formControlName="q10" class="ques_"></p>   <!---->
+              <p id="sub_t">{{ surveyData.p9 }}</p>   <!---->
               <div class="input-field inline" id="row_input">
                 <input type="text" formControlName="question8" [(ngModel)]="survey.question8" id="i_comm" placeholder="Comentarios">
               </div>
@@ -479,7 +480,7 @@
                 <p style="font-weight: 400; text-align: center;">Muchas gracias por sus comentarios, estos nos serán de mucha utilidad para poder brindarle un servicio excelente y cumplir con nuestras promesas hacia usted</p>
                 <p style="text-align: center;"><b>"Haciendolo Volkswagen"</b></p>
               </div>              
-              <div class="row col s1 left-align" id="r_row_b">
+              <div class="row col s1" id="r_row_b" style="padding: 2mm 0;">
                 <img src="assets/Logo3.png" alt="" height="50px">
               </div>
             </div>
