@@ -18,7 +18,14 @@ export class DashboardComponent implements OnInit {
   p = 1;
   Survey: Survey[];
   key = '';
-  currentData = [];
+  currentData = {
+    p2: '',
+    p3: '',
+    p4: '',
+    p6: '',
+    p8: ''
+  };
+  
   dtOptions = {};
   fecha = '';
   save = 1;
@@ -49,7 +56,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.fecha = fechaObj.format(new Date(), 'D [de] MMMM [de] YYYY');
-    
     this.p1 = []; this.p2 = []; this.p3 = []; this.p4 = []; this.p5 = [];
     this.p1Data = []; this.p2Data = []; this.p3Data = []; this.p4Data = []; this.p5Data = [];
     this.key = this.actRouter.snapshot.paramMap.get('key');

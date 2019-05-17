@@ -12,7 +12,17 @@ import { SurveyForm } from 'src/app/models/survey-form';
 })
 export class SurveyFormComponent implements OnInit {
   public surveyF: FormGroup;
-  public currentData = {};
+  public currentData = {
+    p1: '',
+    p2: '',
+    p3: '',
+    p4: '',
+    p5: '',
+    p6: '',
+    p7: '',
+    p8: '',
+    p9: ''
+  };
   public dataList = [];
   dtOptions = {};
   save = 2;
