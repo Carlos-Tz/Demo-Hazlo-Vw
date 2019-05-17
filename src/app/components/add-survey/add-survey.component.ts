@@ -29,6 +29,7 @@ export class AddSurveyComponent implements OnInit {
     question7: null,
     question8: ''
   };
+  public save = 0;
 
   constructor(
     public toastr: ToastrService,

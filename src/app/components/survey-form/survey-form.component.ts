@@ -15,6 +15,7 @@ export class SurveyFormComponent implements OnInit {
   public currentData = {};
   public dataList = [];
   dtOptions = {};
+  save = 2;
 
   constructor(
     private toastr: ToastrService,
@@ -24,20 +25,23 @@ export class SurveyFormComponent implements OnInit {
 
   ngOnInit() {
     this.surveyApi.GetList().snapshotChanges().subscribe(res => {
-      const keyD = res.pop().key;
-      this.surveyApi.getCurrentData(keyD).valueChanges().subscribe(data => {
-        this.currentData = data;
-      });
-      this.surveyApi.GetDataList().snapshotChanges().subscribe(re => {        
-        this.dataList = [];
-        re.forEach(item => {
-          const surv = item.payload.toJSON();
-          surv['$key'] = item.key;
-          this.dataList.push(surv as SurveyForm);
+      if (res.length > 0) {
+        const keyD = res.pop().key;
+        this.surveyApi.getCurrentData(keyD).valueChanges().subscribe(data => {
+          this.currentData = data;
         });
-        this.dataList.reverse();
-        
-      });
+        this.surveyApi.GetDataList().snapshotChanges().subscribe(re => {
+          this.dataList = [];
+          re.forEach(item => {
+            const surv = item.payload.toJSON();
+            surv['$key'] = item.key;
+            this.dataList.push(surv as SurveyForm);
+          });
+          this.dataList.reverse();
+        });
+      } else {
+        return;
+      }
     });
     this.dtOptions = {
       dom: 'Bfrtip',
@@ -79,7 +83,7 @@ export class SurveyFormComponent implements OnInit {
     });
   }
 
-  submitSurveyData() {
+  submitSurveyData = () => {
     this.surveyApi.UpdateSurvey(this.surveyF.value);
     this.toastr.success('Actualizado!');
   }

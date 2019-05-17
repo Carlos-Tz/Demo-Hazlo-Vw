@@ -15,6 +15,8 @@ export class SurveyComponent implements OnInit {
   @Input() public survey: Survey;
   @Input() public submitSurveyData: any;
   @Input() public surveyData: any;
+  @Input() public save: number;
+  @Input() public goBack: any;
 
   constructor ( public surveyApi: SurveyService ) {  }
 

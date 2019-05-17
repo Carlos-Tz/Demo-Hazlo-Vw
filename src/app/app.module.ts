@@ -7,6 +7,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DataTablesModule } from 'angular-datatables';
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+//import 'materialize-css';
+//import { MaterializeModule } from 'angular2-materialize';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +21,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SurveyFormComponent } from './components/survey-form/survey-form.component';
 import { ViewSurveyComponent } from './components/view-survey/view-survey.component';
 import { AddSurveyComponent } from './components/add-survey/add-survey.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,9 @@ import { AddSurveyComponent } from './components/add-survey/add-survey.component
     DashboardComponent,
     SurveyFormComponent,
     ViewSurveyComponent,
-    AddSurveyComponent
+    AddSurveyComponent,
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -37,9 +46,12 @@ import { AddSurveyComponent } from './components/add-survey/add-survey.component
     ReactiveFormsModule,
     NgxChartsModule,
     FormsModule,
-    DataTablesModule
+    DataTablesModule,
+    AngularFireAuthModule,
+    AngularFirestoreModule
+   // MaterializeModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

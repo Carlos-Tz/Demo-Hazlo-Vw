@@ -1,0 +1,53 @@
+<nav class="menu_ no-print">
+  <div class="nav-wrapper_">
+    <a [routerLink]="['/']" class="brand-logo_">
+      <svg class="svg-logo_">
+        <text class="text_" x="50%" y="50%" alignment-baseline="middle" text-anchor="middle">
+          <tspan class="tspan_" alignment-baseline="middle" text-anchor="middle">di</tspan>docu
+        </text>
+      </svg>
+    </a>
+    <ul class="menu-items_">
+      <li *ngIf="save==1 || save==2"><a class="a" (click)='authService.SignOut()'>Salir</a></li>
+      <li><a class="a" [routerLink]="['/panel']">Panel</a></li>
+      <li *ngIf="save==0">
+        <button class="nav-save-btn_ btn waves-effect waves-light" (click)="submitSurveyData()"
+          [disabled]="!surveyForm.valid">
+          Guardar
+        </button>
+      </li>
+      <li *ngIf="save==1">
+        <button class="nav-save-btn_ btn waves-effect waves-light" (click)="goBack()">
+          Volver
+        </button>
+      </li>
+      <li *ngIf="save==2">
+        <!-- <button class="nav-save-btn_ btn waves-effect waves-light" [disabled]="!surveyForm.valid">
+          Actualizar
+        </button> -->        
+        <button data-target="modal1" class="btn modal-trigger nav-save-btn_ waves-effect waves-light" [disabled]="!surveyForm.valid"s>Actualizar</button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h6>¿Desea actualizar la encuesta actual?</h6>
+      </div>
+    <div class="modal-footer">
+        <button class="waves-effect red lighten-1 btn-flat modal-close">Cancelar</button>
+        <button (click)="submitSurveyData()" class="modal-action modal-close waves-effect green btn-flat">Aceptar</button>
+      <!-- <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a> -->
+    </div>
+  </div>
+
+<!-- <div id="modal" #modal class="modal bottom-sheet" materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions">
+  <div class="modal-content">
+    <h6>¿Desea actualizar la encuesta actual?</h6>
+  </div>
+  <div class="modal-footer">
+    <button class="waves-effect waves-red lighten-1 btn-flat" (click)="closeModal()">No</button>
+    <button (click)="submitSurveyData()" class="modal-action modal-close waves-effect waves-green btn-flat">Si</button>
+  </div>
+</div> -->

@@ -29,6 +29,7 @@ export class ViewSurveyComponent implements OnInit {
     question8: ''
   };
   public surveyData = {};
+  public save = 1;
 
   constructor(
     public toastr: ToastrService,
@@ -50,7 +51,7 @@ export class ViewSurveyComponent implements OnInit {
     this.surveyApi.getCurrentData(key).valueChanges().subscribe(data => {
       this.surveyData = data;
       this.survey = data.surveys[key2];
-      console.log(this.survey.question1);
+     // console.log(this.survey.question1);
     });
     /* this.survey = this.surveyData.surveys. */
     this.sForm();
@@ -78,7 +79,7 @@ export class ViewSurveyComponent implements OnInit {
     });
   }
 
-  goBack() {
+  goBack = () => {
     this.location.back();
   }
 }

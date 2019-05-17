@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import 'fecha';
 import fechaObj from 'fecha';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,6 +21,7 @@ export class DashboardComponent implements OnInit {
   currentData = [];
   dtOptions = {};
   fecha = '';
+  save = 1;
 
   // public filter_Key: string;
   filter_key = '';
@@ -40,7 +42,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     public surveyApi: SurveyService,
-    private actRouter: ActivatedRoute/* ,
+    private actRouter: ActivatedRoute,
+    private location: Location/* ,
     public authService: AuthService */
   ) { }
 
@@ -153,5 +156,7 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-
+  goBack = () => {
+    this.location.back();
+  }
 }
